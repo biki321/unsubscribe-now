@@ -1,0 +1,26 @@
+.yTChComp-div {
+  display: flex;
+  margin: 15px 0px;
+}
+
+.yTChComp-div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.yTChComp-div .yTCh-title {
+  color: #030303;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.yTChComp-div .yT-unsubscribe-btn {
+  height: 25px;
+  align-self: center;
+  margin-left: auto;
+  border: none;
+  font-weight: 700;
+  color: #1f6fd8;
+}

@@ -1,0 +1,12 @@
+{
+  "web": {
+    "client_id": "1067343750765-150bnpgkvnph85l5bm40drq01a1lme4d.apps.googleusercontent.com",
+    "project_id": "unsubscribe-now-330214",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "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",
+    "redirect_uris": ["http://localhost:3000"],
+    "javascript_origins": ["http://localhost:3000"]
+  }
+}
