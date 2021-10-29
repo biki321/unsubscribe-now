@@ -1,0 +1,30 @@
+.unsubscribePage-div {
+  padding: 0px 10px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.nav-bar {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1px 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-bar a.active {
+  border: none;
+  background-color: #0084ff;
+  color: #fff;
+  font-weight: 400;
+}

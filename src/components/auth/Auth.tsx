@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import IAuthState from "../../interfaces/authState.interface";
 import * as queryString from "query-string";
-import youtubeAuthUrl from "../../helpers/authRequiredObjects";
 import Youtube from "../youtube/Youtube";
 import { ParsedQuery } from "query-string";
+import { YtLoginBtn } from "../loginbtn/YtLoginBtn";
+import { TwitterLoginBtn } from "../loginbtn/TwitterLoginBtn";
 
 //this comp handle authentication of all the apps like youtube, twitter etc.
 export default function Auth({ app }: { app: "youtube" | "twitter" }) {
@@ -68,17 +69,31 @@ export default function Auth({ app }: { app: "youtube" | "twitter" }) {
       return youtubeAuthState ? (
         <Youtube authState={youtubeAuthState} />
       ) : (
-        <a className="login-link" href={youtubeAuthUrl}>
-          Login with Youtube
-        </a>
+        <div
+          style={{
+            height: "90vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <YtLoginBtn />
+        </div>
       );
     } else if (app === "twitter") {
       return twitterAuthState ? (
         <div>twitter</div>
       ) : (
-        <a className="login-link" href={youtubeAuthUrl}>
-          Login with twitter
-        </a>
+        <div
+          style={{
+            height: "90vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TwitterLoginBtn />
+        </div>
       );
     } else return <div></div>;
   }

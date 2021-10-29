@@ -12,12 +12,18 @@ export default function YTChannelComp(props: IProps) {
     <div className="yTChComp-div">
       <img src={props.thumbnail} alt="" />
       <p className="yTCh-title">{props.channelTitle}</p>
-      <button
+      <div
         className="yT-unsubscribe-btn"
         onClick={() => props.onUnsubscribe(props.subscriptionId)}
       >
-        {props.unSubsLoading ? <Spinner width="15px" /> : "Unsubscribe"}
-      </button>
+        {props.unSubsLoading ? (
+          <div className="spinner-div">
+            <Spinner width="15px" borderWidth="2px" />
+          </div>
+        ) : (
+          "Unsubscribe"
+        )}
+      </div>
     </div>
   );
 }

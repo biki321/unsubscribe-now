@@ -117,7 +117,7 @@ function Youtube(props: IProps) {
             }
           />
         ))}
-        {loading && <Spinner width="15px" />}
+        {loading && <Spinner width="15px" borderWidth="2px" />}
       </>
     </div>
   );
