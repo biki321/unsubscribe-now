@@ -36,7 +36,7 @@ function Youtube(props: IProps) {
         //maxResults = 0 to 50
         `/subscriptions?part=snippet&mine=true&maxResults=20&order=unread&pageToken=${nextPageToken.current}`
       );
-      console.log(data);
+      // console.log(data);
       nextPageToken.current = data.nextPageToken;
       setChannelsData(data.items);
     } catch (error) {
@@ -45,7 +45,7 @@ function Youtube(props: IProps) {
   }, [axiosInstance]);
 
   useEffect(() => {
-    console.log("useeffect at youtube.tsx");
+    // console.log("useeffect at youtube.tsx");
     fetchChannels();
     setLoading(false);
   }, [fetchChannels]);
@@ -101,6 +101,7 @@ function Youtube(props: IProps) {
       }}
     >
       <>
+        {error && <div>{error}</div>}
         {channels.map((channel) => (
           <YTChannelComp
             key={channel.channelId}

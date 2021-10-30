@@ -4,25 +4,26 @@ import * as queryString from "query-string";
 import Youtube from "../youtube/Youtube";
 import { ParsedQuery } from "query-string";
 import { YtLoginBtn } from "../loginbtn/YtLoginBtn";
-import { TwitterLoginBtn } from "../loginbtn/TwitterLoginBtn";
+// import { TwitterLoginBtn } from "../loginbtn/TwitterLoginBtn";
 
 //this comp handle authentication of all the apps like youtube, twitter etc.
 export default function Auth({ app }: { app: "youtube" | "twitter" }) {
   const [youtubeAuthState, setYoutubeAuthState] = useState<IAuthState | null>(
     null
   );
-  const [twitterAuthState, setTwitterAuthState] = useState(null);
+  // const [twitterAuthState, setTwitterAuthState] = useState(null);
 
   useEffect(() => {
-    console.log("at useeffect auth.tsx");
+    // console.log("at useeffect auth.tsx");
     if (
-      (app === "youtube" && !youtubeAuthState) ||
-      (app === "twitter" && !twitterAuthState)
+      app === "youtube" &&
+      !youtubeAuthState
+      // (app === "twitter" && !twitterAuthState)
     ) {
       let params = queryString.parse(window.location.href, {
         parseNumbers: true,
       });
-      console.log(params);
+      // console.log(params);
       const convertedParams = paramsConvert(params);
 
       if (params.access_token) {
@@ -65,7 +66,7 @@ export default function Auth({ app }: { app: "youtube" | "twitter" }) {
 
   function appOrAuth() {
     if (app === "youtube") {
-      console.log("youtube returning");
+      // console.log("youtube returning");
       return youtubeAuthState ? (
         <Youtube authState={youtubeAuthState} />
       ) : (
@@ -80,22 +81,24 @@ export default function Auth({ app }: { app: "youtube" | "twitter" }) {
           <YtLoginBtn />
         </div>
       );
-    } else if (app === "twitter") {
-      return twitterAuthState ? (
-        <div>twitter</div>
-      ) : (
-        <div
-          style={{
-            height: "90vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <TwitterLoginBtn />
-        </div>
-      );
-    } else return <div></div>;
+    }
+    // else if (app === "twitter") {
+    //   return twitterAuthState ? (
+    //     <div>twitter</div>
+    //   ) : (
+    //     <div
+    //       style={{
+    //         height: "90vh",
+    //         display: "flex",
+    //         justifyContent: "center",
+    //         alignItems: "center",
+    //       }}
+    //     >
+    //       <TwitterLoginBtn />
+    //     </div>
+    //   );
+    // }
+    else return <div></div>;
   }
 
   return appOrAuth();
