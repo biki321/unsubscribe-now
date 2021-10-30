@@ -29,7 +29,7 @@ export default function Auth({ app }: { app: "youtube" | "twitter" }) {
         window.history.replaceState(
           {},
           "",
-          process.env.REACT_APP_SELF_BASE_URL
+          `${process.env.REACT_APP_SELF_BASE_URL}unsubscribe/${app}`
         );
 
         //we are not handling the error which happens, when user do not allow to access data

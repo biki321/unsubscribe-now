@@ -1,4 +1,5 @@
 import youtubeAuthUrl from "../../helpers/authRequiredObjects";
+import glogo from "../../icons/google.icon.png";
 
 export function YtLoginBtn() {
   return (
@@ -6,15 +7,30 @@ export function YtLoginBtn() {
       className="login-link"
       href={youtubeAuthUrl}
       style={{
-        color: "white",
-        borderRadius: "8px",
+        borderRadius: "2px",
         padding: "5px",
-        background: "#FF0000",
         textDecoration: "none",
         cursor: "pointer",
+        background: "#fff",
+        width: "250px",
+        paddingLeft: "10px",
+        paddingRight: "10px",
+        display: "flex",
+        alignContent: "center",
       }}
     >
-      Login with Youtube
+      <div>
+        <img
+          className="glogo"
+          src={glogo}
+          alt=""
+          style={{
+            width: "20px",
+            height: "20px",
+          }}
+        />
+      </div>
+      <div style={{ flex: 2, textAlign: "center" }}> Sign in with Google</div>
     </a>
   );
 }

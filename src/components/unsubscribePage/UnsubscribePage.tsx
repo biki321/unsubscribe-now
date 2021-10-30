@@ -7,7 +7,7 @@ export default function UnsubscribePage() {
     <div className="unsubscribePage-div">
       <div className="nav-bar">
         <NavLink to="/unsubscribe/youtube">youtube</NavLink>
-        <NavLink to="/unsubscribe/twitter">twitter</NavLink>
+        {/* <NavLink to="/unsubscribe/twitter">twitter</NavLink> */}
       </div>
       <div>
         <Switch>

@@ -1,4 +1,5 @@
 import youtubeAuthUrl from "../../helpers/authRequiredObjects";
+import tlogo from "../../icons/twitter.icon.png";
 
 export function TwitterLoginBtn() {
   return (
@@ -6,15 +7,30 @@ export function TwitterLoginBtn() {
       className="login-link"
       href={youtubeAuthUrl}
       style={{
-        color: "white",
-        borderRadius: "8px",
+        borderRadius: "2px",
         padding: "5px",
-        background: "#1F6FD8",
         textDecoration: "none",
         cursor: "pointer",
+        background: "#fff",
+        width: "250px",
+        paddingLeft: "10px",
+        paddingRight: "10px",
+        display: "flex",
+        alignContent: "center",
       }}
     >
-      Login with Twitter
+      <div>
+        <img
+          className="glogo"
+          src={tlogo}
+          alt=""
+          style={{
+            width: "20px",
+            height: "20px",
+          }}
+        />
+      </div>
+      <div style={{ flex: 2, textAlign: "center" }}> Sign in with Twitter</div>
     </a>
   );
 }
